@@ -1,0 +1,22 @@
+[package]
+name = "crane_env_pyo3"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "crane_env_pyo3"
+crate-type = ["cdylib", "rlib"]
+[dependencies]
+pyo3 = { version = "0.24.1", features = ["multiple-pymethods"] }
+box_gen = { path = "box_gen" }
+pyo3-stub-gen = "0.7.0"
+pyo3-log = "0.12.3"
+log = "0.4.27"
+rand = "*"
+rayon = "*"
+stupid_utils = "*"
+nalgebra = "0.34.1"
+pulp = "0.21.5"
+[profile.dev]
+opt-level = 3
